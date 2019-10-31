@@ -21,8 +21,12 @@
     "lodash": "^4.17.15",
     "mongoose": "^5.6.12",
     "react-redux": "^7.1.1",
+    "reactstrap": "^8.1.1",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
     "validator": "^12.0.0"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.11.2"
   }
 }
