@@ -45,10 +45,16 @@ class CustomerForm extends React.Component {
 
   render() {
     console.log("form customer render");
+
     return (
       <div className="row h-100 justify-content-center align-items-center">
         <form onSubmit={this.handleSubmit}>
-          <h3>Add Customer</h3>
+          {this.props.customer === undefined ? (
+            <h3>Add Customer</h3>
+          ) : (
+            <h3>Edit Customer</h3>
+          )}
+
           <div className="form-group">
             <label>
               Name
@@ -58,6 +64,7 @@ class CustomerForm extends React.Component {
                 className="form-control"
                 onChange={this.handleChange}
                 name="name"
+                required
               />
             </label>
           </div>
@@ -65,11 +72,13 @@ class CustomerForm extends React.Component {
             <label>
               Email
               <input
-                type="text"
+                type="email"
                 value={this.state.email}
                 className="form-control"
                 onChange={this.handleChange}
                 name="email"
+                required
+                pattern=".+@gmail.com"
               />
             </label>
           </div>
@@ -77,15 +86,17 @@ class CustomerForm extends React.Component {
             <label>
               Mobile
               <input
-                type="text"
+                type="tel"
                 value={this.state.mobile}
                 className="form-control"
                 onChange={this.handleChange}
                 name="mobile"
+                required
+                pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
               />
             </label>
           </div>
-          <input type="submit" value="submit" className="btn btn-primary" />
+          <input type="submit" value="Submit" className="btn btn-primary" />
         </form>
       </div>
     );

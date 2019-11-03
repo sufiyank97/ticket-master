@@ -33,12 +33,8 @@ function App(props) {
           </Link>
           {Object.keys(props.user).length === 0 ? (
             <React.Fragment>
-              <Link to="/login" className="navbar-brand ">
-                Login
-              </Link>
-              <Link to="/register" className="navbar-brand ">
-                Register
-              </Link>
+              <Link to="/login">Login</Link>
+              <Link to="/register">Register</Link>
             </React.Fragment>
           ) : (
             <React.Fragment>

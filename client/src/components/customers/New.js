@@ -20,7 +20,7 @@ class CustomersNew extends React.Component {
           console.log("validation error", response.data.errors);
         } else {
           console.log("Success", response.data);
-          this.props.history.push("/");
+          this.props.history.push("/customers");
         }
       });
   }

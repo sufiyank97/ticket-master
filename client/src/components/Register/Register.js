@@ -74,12 +74,13 @@ export default class Register extends React.Component {
             <label>
               Email
               <input
-                type="text"
+                type="email"
                 name="email"
                 className="form-control"
                 onChange={this.handleChange}
                 value={this.state.email}
                 required
+                pattern=".+@gmail.com"
               />
             </label>
           </div>

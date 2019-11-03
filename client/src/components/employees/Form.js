@@ -49,7 +49,11 @@ export default class EmployeeForm extends React.Component {
     return (
       <div className="row h-100 justify-content-center align-items-center">
         <form onSubmit={this.handleSubmit}>
-          <h3>Add Employee</h3>
+          {this.props.employee === undefined ? (
+            <h3>Add Employee</h3>
+          ) : (
+            <h3>Edit Employee</h3>
+          )}
           <div className="form-group">
             <label>
               Name
@@ -59,36 +63,42 @@ export default class EmployeeForm extends React.Component {
                 className="form-control"
                 onChange={this.handleChange}
                 name="name"
+                required
               />
             </label>
           </div>
           <div className="form-group">
             <label>
-              email
+              Email
               <input
-                type="text"
+                type="email"
                 value={this.state.email}
                 className="form-control"
                 onChange={this.handleChange}
                 name="email"
+                required
+                pattern=".+@gmail.com"
               />
             </label>
           </div>
           <div className="form-group">
             <label>
-              mobile
+              Mobile
               <input
-                type="text"
+                type="tel"
                 value={this.state.mobile}
                 className="form-control"
                 onChange={this.handleChange}
                 name="mobile"
+                // pattern="[0-9]{}"
+                required
               />
             </label>
           </div>
           <div className="form-group">
-            <label>Department</label>
+            <label htmlFor="dept">Department</label>
             <select
+              id="dept"
               value={this.state.deptId}
               onChange={this.handleChange}
               className="form-control"

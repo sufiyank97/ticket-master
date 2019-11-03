@@ -35,11 +35,13 @@ class Login extends React.Component {
             <label>
               Email
               <input
-                type="text"
+                type="email"
                 name="email"
                 onChange={this.handleChange}
                 value={this.state.email}
                 className="form-control"
+                required
+                pattern=".+@gmail.com"
               />
             </label>
           </div>
@@ -52,6 +54,7 @@ class Login extends React.Component {
                 onChange={this.handleChange}
                 value={this.state.password}
                 className="form-control"
+                required
               />
             </label>
           </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import axios from "../../config/axios";
-import { Redirect, useHistory } from "react-router-dom";
+// import { Redirect, useHistory } from "react-router-dom";
 import { resetUser } from "../../actions/user";
 // export default function Logout() {
 //     // axios.delete("/logout")
