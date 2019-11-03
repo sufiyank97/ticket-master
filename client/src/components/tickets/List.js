@@ -119,7 +119,7 @@ export default class TicketList extends React.Component {
       .catch(err => {
         console.log(err);
       });
-    window.location.reload();
+    // window.location.reload();
     // this.setState(prevState=>({
     //     tickets:prevState.tickets.map(e1=>({...e1,isDeleted:false}))
     // }),()=>{console.log(this.state.tickets)})
