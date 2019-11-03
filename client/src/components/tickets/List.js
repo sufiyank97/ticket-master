@@ -116,6 +116,23 @@ export default class TicketList extends React.Component {
           });
         });
       })
+      .then(response => {
+        axios
+          .get("/tickets", {
+            headers: {
+              "x-auth": localStorage.getItem("authToken")
+            }
+          })
+          .then(response => {
+            const tickets = response.data.filter(e1 => e1.isDeleted === false);
+            // const tickets=response.data
+            console.log(tickets);
+            this.setState({ tickets });
+          })
+          .catch(err => {
+            console.log(err);
+          });
+      })
       .catch(err => {
         console.log(err);
       });
